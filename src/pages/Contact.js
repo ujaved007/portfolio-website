@@ -5,7 +5,7 @@ function contact() {
 		<section className="container">
 			<Title title="Contact me" />
 			<article className="justify-center align-center">
-				<form action="POST">
+				<form name="contact" method="POST">
 					<div className="form-style">
 						<label htmlFor="name">Name*</label>
 						<input
@@ -50,7 +50,11 @@ function contact() {
 							required
 						></textarea>
 					</div>
-					<button className="btn-main margin-top">Send Message</button>
+					<input type="hidden" name="form-name" value="contact" />
+
+					<button className="btn-main margin-top" type="submit">
+						Send Message
+					</button>
 				</form>
 			</article>
 		</section>
