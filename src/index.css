@@ -110,6 +110,7 @@ nav {
 
 .logo {
 	width: 120px;
+	cursor: pointer;
 }
 
 .links-container {
@@ -125,6 +126,7 @@ nav {
 	font-weight: 700;
 	color: var(--blue);
 	padding: 0 0 0 3rem;
+	cursor: pointer;
 }
 
 /* HEADER */

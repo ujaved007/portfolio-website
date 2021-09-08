@@ -1,28 +1,31 @@
 import React from "react";
 import logo from "../assets/logo.png";
+import { Link } from "react-scroll";
 
 function Navbar() {
 	return (
 		<nav>
 			<div>
-				<img src={logo} alt="logo" className="logo" />
+				<Link to="home" smooth={true}>
+					<img src={logo} alt="logo" className="logo" />
+				</Link>
 			</div>
 			<div>
 				<ul className="links-container">
 					<li>
-						<a href="/" className="nav-links">
+						<Link to="about" spy={true} smooth={true} className="nav-links">
 							About
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/" className="nav-links">
+						<Link to="projects" spy={true} smooth={true} className="nav-links">
 							Projects
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/" className="nav-links">
+						<Link to="contact" spy={true} smooth={true} className="nav-links">
 							Contact
-						</a>
+						</Link>
 					</li>
 				</ul>
 			</div>

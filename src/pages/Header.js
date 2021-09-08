@@ -14,7 +14,7 @@ function Header() {
 		});
 	}, []);
 	return (
-		<div className="container">
+		<div className="container" id="home">
 			<header>
 				<div className="hero-content">
 					<h1>

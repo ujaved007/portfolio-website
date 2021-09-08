@@ -2,7 +2,7 @@ import React from "react";
 import Title from "../components/Title";
 function contact() {
 	return (
-		<section className="container">
+		<section className="container" id="contact">
 			<Title title="Contact me" />
 			<article className="justify-center align-center">
 				<form

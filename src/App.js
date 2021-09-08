@@ -6,6 +6,8 @@ import TechStack from "./pages/TechStack";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
+import Error from "./pages/Error";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
 	return (

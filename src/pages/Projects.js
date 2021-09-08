@@ -5,7 +5,7 @@ import Card from "../components/Card";
 
 function projects() {
 	return (
-		<section className="container">
+		<section className="container" id="projects">
 			<Title title="Projects" />
 			<article className="justify-center">
 				<div className="grid-2-col">

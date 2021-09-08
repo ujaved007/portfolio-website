@@ -3,7 +3,7 @@ import Title from "../components/Title";
 
 function About() {
 	return (
-		<div className="container">
+		<div className="container" id="about">
 			<Title title="About Me" />
 			<section className="justify-center">
 				<p className="text-justify-center">
