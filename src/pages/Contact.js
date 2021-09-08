@@ -5,7 +5,12 @@ function contact() {
 		<section className="container">
 			<Title title="Contact me" />
 			<article className="justify-center align-center">
-				<form name="contact" method="POST">
+				<form
+					name="contact"
+					method="post"
+					data-netlify="true"
+					onSubmit="submit"
+				>
 					<div className="form-style">
 						<label htmlFor="name">Name*</label>
 						<input
