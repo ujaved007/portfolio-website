@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+	--blue: #0c73f0;
+	--orange: #fdb24c;
+	--grey: #515b60;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+body {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+main {
+	margin: 0 auto;
+	max-width: 990px;
+}
+
+.container {
+	padding: 8rem 0 8rem 0;
+}
+
+h1 {
+	font-size: 4rem;
+	color: var(--blue);
+}
+h2 {
+	font-size: 2rem;
+	color: var(--blue);
+}
+h3 {
+	font-size: 1.4rem;
+	color: var(--blue);
+}
+.reverse {
+	color: white;
+}
+p {
+	font-size: 1.1rem;
+	color: var(--grey);
+	line-height: 1.5rem;
+}
+label {
+	color: var(--blue);
+	font-weight: 700;
+}
+.underline {
+	background-color: var(--orange);
+	height: 2.5px;
+	width: 5rem;
+	margin: -1.2rem auto;
+}
+.hero {
+	font-size: 1.5rem;
+	color: var(--grey);
+	margin-bottom: 3rem;
+}
+.btn-main {
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: var(--blue);
+	background-color: white;
+	border-color: var(--blue);
+	border-width: 3px;
+	text-align: center;
+	padding: 10px 20px 10px 20px;
+}
+.btn-main:hover {
+	color: white;
+	background-color: var(--blue);
+	cursor: pointer;
+}
+.content-center {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.text-center {
+	text-align: center;
+}
+.text-justify-center {
+	text-align: center;
+	max-width: 60ch;
+	margin: 0 auto;
+}
+.center {
+	margin: 0 auto;
+}
+.align-center {
+	align-items: center;
+}
+
+/* NAVBAR */
+
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	background-color: white;
+	margin-top: 20px;
+	z-index: 9999;
+}
+
+.logo {
+	width: 120px;
+}
+
+.links-container {
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+}
+
+.nav-links {
+	display: flex;
+	font-size: 1.3rem;
+	text-decoration: none;
+	font-weight: 700;
+	color: var(--blue);
+	padding: 0 0 0 3rem;
+}
+
+/* HEADER */
+
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.hero-content {
+	max-width: 60ch;
+}
+
+.hero-img {
+	display: flex;
+	margin-left: auto;
+}
+
+/* ABOUT */
+.title {
+	padding-bottom: 50px;
+}
+.justify-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.padding-top {
+	padding-top: 30px;
+}
+.margin-top {
+	margin-top: 30px;
+}
+/* TECH STACK */
+.stack-container {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	justify-content: space-around;
+	align-items: center;
+	justify-items: center;
+	padding-top: 50px;
+}
+.stack-icon {
+	width: 50px;
+	filter: grayscale(100%);
+}
+.stack-icon:hover {
+	filter: none;
+}
+/* PROJECTS */
+.grid-2-col {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: center;
+	justify-items: center;
+}
+/* CARDS */
+
+.card {
+	margin-top: 50px;
+	width: 400px;
+	overflow: hidden;
+	background-color: white;
+	filter: drop-shadow(0 0 20px rgba(12, 115, 240, 0.2));
+	padding: 20px 20px 20px 20px;
+}
+.card-img-container {
+	height: 280px;
+	overflow: hidden;
+}
+.card-img {
+	object-fit: cover;
+	width: 400px;
+}
+.card-links {
+	display: flex;
+}
+.card-btn {
+	font-size: 1rem;
+	font-weight: 700;
+	color: var(--blue);
+	background-color: white;
+	border-color: var(--blue);
+	border-width: 3px;
+	text-align: center;
+	padding: 5px 10px 5px 10px;
+	margin-right: 20px;
+}
+.card-btn:hover {
+	color: white;
+	background-color: var(--blue);
+	cursor: pointer;
+}
+.card-tags {
+	display: flex;
+}
+.tag {
+	background-color: var(--orange);
+	margin: 20px 10px 20px 0;
+	padding: 3px 7px 3px 7px;
+	color: white;
+}
+/* FORM */
+.form-style {
+	display: flex;
+	flex-direction: column;
+	margin-top: 30px;
+}
+.input-field {
+	width: 30rem;
+	border-width: 0 0 2px 0;
+	border-bottom-color: var(--blue);
+	padding: 10px 0 10px 0;
+}
+textarea {
+	font-family: "Roboto", sans-serif;
+	margin-top: 5px;
+}
+/*FOOTER*/
+.footer {
+	background-color: var(--blue);
+	height: 60px;
+	width: 100%;
+}
