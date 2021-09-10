@@ -17,11 +17,13 @@ body {
 
 main {
 	margin: 0 auto;
-	max-width: 990px;
+	max-width: 90vw;
 }
 
 .container {
 	padding: 8rem 0 8rem 0;
+	max-width: 990px;
+	margin: auto;
 }
 
 h1 {
@@ -93,32 +95,35 @@ label {
 .align-center {
 	align-items: center;
 }
-
 /* NAVBAR */
-
 nav {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: center;
 	position: -webkit-sticky;
 	position: sticky;
-	top: 0;
+	top: 0px;
 	background-color: white;
-	margin-top: 20px;
+	max-width: 990px;
+	padding-top: 20px;
+	margin: auto;
 	z-index: 9999;
 }
-
+.nav-container {
+	display: flex;
+	flex-direction: row;
+	width: 90vw;
+	justify-content: space-between;
+}
 .logo {
 	width: 120px;
 	cursor: pointer;
 }
-
 .links-container {
 	list-style-type: none;
 	display: flex;
 	flex-direction: row;
 }
-
 .nav-links {
 	display: flex;
 	font-size: 1.3rem;
@@ -128,24 +133,45 @@ nav {
 	padding: 0 0 0 3rem;
 	cursor: pointer;
 }
+.nav-burger-icon {
+	display: none;
+}
+.links-container-mob {
+	display: none;
 
+	flex-direction: column;
+	align-items: flex-end;
+	position: fixed;
+	background-color: white;
+	width: 100vw;
+	z-index: 3;
+	overflow: hidden;
+}
+.nav-links-mob {
+	list-style-type: none;
+	font-size: 0.8rem;
+	line-height: 3rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	margin-right: 4vw;
+}
+.nav-btn {
+	display: none;
+}
 /* HEADER */
-
 header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
-
 .hero-content {
 	max-width: 60ch;
 }
-
 .hero-img {
 	display: flex;
 	margin-left: auto;
 }
-
 /* ABOUT */
 .title {
 	padding-bottom: 50px;
@@ -164,7 +190,8 @@ header {
 /* TECH STACK */
 .stack-container {
 	display: grid;
-	grid-template-columns: repeat(8, 1fr);
+	grid-template-columns: repeat(auto-fit, 120px);
+	grid-row-gap: 40px;
 	justify-content: space-around;
 	align-items: center;
 	justify-items: center;
@@ -180,15 +207,19 @@ header {
 /* PROJECTS */
 .grid-2-col {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(auto-fit, 490px);
 	justify-content: center;
 	justify-items: center;
 }
 /* CARDS */
-
+.card-parent {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
 .card {
 	margin-top: 50px;
-	width: 400px;
+	max-width: 400px;
 	overflow: hidden;
 	background-color: white;
 	filter: drop-shadow(0 0 20px rgba(12, 115, 240, 0.2));
@@ -200,7 +231,7 @@ header {
 }
 .card-img {
 	object-fit: cover;
-	width: 400px;
+	max-width: 400px;
 }
 .card-links {
 	display: flex;
@@ -230,6 +261,10 @@ header {
 	padding: 3px 7px 3px 7px;
 	color: white;
 }
+a {
+	color: inherit;
+	text-decoration: none;
+}
 /* FORM */
 .form-style {
 	display: flex;
@@ -251,4 +286,114 @@ textarea {
 	background-color: var(--blue);
 	height: 60px;
 	width: 100%;
+}
+.footer-icon {
+	margin-left: 30px;
+	width: 25px;
+}
+/*MEDIA QUERY*/
+@media screen and (max-width: 768px) {
+	main {
+		max-width: 95vw;
+	}
+	.container {
+		padding: 2rem 0 2rem 0;
+	}
+	h1 {
+		font-size: 2rem;
+		color: var(--blue);
+	}
+	h2 {
+		font-size: 1.4rem;
+		color: var(--blue);
+	}
+	h3 {
+		font-size: 1rem;
+		color: var(--blue);
+	}
+	p {
+		font-size: 0.8rem;
+		line-height: 1.5rem;
+	}
+	.hero {
+		font-size: 1rem;
+		margin-bottom: 1.2rem;
+	}
+	.btn-main {
+		font-size: 1rem;
+		border-width: 2px;
+		padding: 5px 10px 5px 10px;
+	}
+	/*NAVBAR*/
+	.nav-container {
+		width: 95vw;
+	}
+	nav {
+		align-items: center;
+	}
+	.links-container {
+		display: none;
+	}
+	.logo {
+		width: 100px;
+	}
+	.nav-burger-icon {
+		display: flex;
+		width: 25px;
+	}
+	.nav-btn {
+		display: block;
+		background-color: white;
+		border: none;
+	}
+	.links-container-mob {
+		display: flex;
+	}
+	/*STACK*/
+	.stack-container {
+		grid-template-columns: repeat(auto-fit, 100px);
+		grid-row-gap: 25px;
+		padding-top: 30px;
+	}
+	.stack-icon {
+		width: 30px;
+		filter: none;
+	}
+
+	/*CARDS*/
+	.card-btn {
+		font-size: 0.8rem;
+		border-width: 2px;
+		padding: 3px 7px 3px 7px;
+	}
+	.tag {
+		margin: 20px 10px 10px 0;
+		padding: 3px 7px 3px 7px;
+		color: white;
+		font-size: smaller;
+	}
+	/*FORM*/
+	.input-field {
+		width: 25rem;
+	}
+}
+@media screen and (max-width: 480px) {
+	.logo {
+		width: 70px;
+	}
+	.hero-img {
+		display: none;
+	}
+	.card {
+		margin-top: 50px;
+		max-width: 350px;
+		filter: drop-shadow(0 0 20px rgba(12, 115, 240, 0.2));
+		padding: 10px 10px 10px 10px;
+	}
+	.input-field {
+		width: 15rem;
+	}
+	.grid-2-col {
+		grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+	}
 }

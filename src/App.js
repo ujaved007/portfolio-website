@@ -11,17 +11,21 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
 	return (
-		<React.Fragment>
-			<main>
-				<Navbar />
-				<Header />
-				<About />
-				<TechStack />
-				<Projects />
-				<Contact />
-			</main>
-			<Footer />
-		</React.Fragment>
+		<Router>
+			<Route exact path="/">
+				<React.Fragment>
+					<Navbar />
+					<main>
+						<Header />
+						<About />
+						<TechStack />
+						<Projects />
+						<Contact />
+					</main>
+					<Footer />
+				</React.Fragment>
+			</Route>
+		</Router>
 	);
 }
 

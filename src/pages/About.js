@@ -1,5 +1,6 @@
 import React from "react";
 import Title from "../components/Title";
+import { Link } from "react-scroll";
 
 function About() {
 	return (
@@ -15,7 +16,11 @@ function About() {
 					designer/digital designer in my previous roles.
 				</p>
 				<div className="center padding-top">
-					<button className="btn-main">See Projects</button>
+					<button className="btn-main">
+						<Link to="projects" smooth="true">
+							See Projects
+						</Link>
+					</button>
 				</div>
 			</section>
 		</div>

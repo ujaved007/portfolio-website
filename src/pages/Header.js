@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 import * as animationData from "../assets/hero-anim.json";
+import { Link } from "react-scroll";
 
 function Header() {
 	const container = useRef(null);
@@ -25,7 +26,11 @@ function Header() {
 						I’m a Front-end Web Developer with a knack for learning new
 						technologies.
 					</p>
-					<button className="btn-main">Get in touch</button>
+					<button className="btn-main">
+						<Link to="contact" smooth={true}>
+							Get in touch
+						</Link>
+					</button>
 				</div>
 				<div className="hero-img" ref={container}></div>
 			</header>

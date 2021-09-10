@@ -11,7 +11,7 @@ function projects() {
 				<div className="grid-2-col">
 					{projectsData.map((project) => {
 						return (
-							<div key={project.key}>
+							<div key={project.key} className="card-parent">
 								<Card
 									image={project.image}
 									title={project.title}
