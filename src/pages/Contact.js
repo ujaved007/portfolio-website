@@ -6,6 +6,7 @@ function contact() {
 			<Title title="Contact me" />
 			<article className="justify-center align-center">
 				<form
+					className="contact-form"
 					name="contact"
 					method="post"
 					data-netlify="true"
