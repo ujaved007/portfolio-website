@@ -212,6 +212,9 @@ header {
 	justify-items: center;
 	padding-top: 50px;
 }
+.stack-container:hover {
+	cursor: url("assets/torch.png"), pointer;
+}
 .stack-icon {
 	width: 50px;
 	filter: grayscale(100%);
@@ -219,7 +222,6 @@ header {
 .stack-icon:hover {
 	filter: none;
 	transition: 200ms ease-in-out;
-	cursor: url("assets/torch.png"), pointer;
 }
 /* PROJECTS */
 .grid-2-col {
