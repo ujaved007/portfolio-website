@@ -3,6 +3,7 @@ import logo from "../assets/logo.png";
 import menuIcon from "../assets/menu.png";
 import { Link } from "react-scroll";
 import { animateScroll as scroll } from "react-scroll";
+import HamburgerIcon from "../components/HamburgerIcon";
 
 function Navbar() {
 	const [toggle, setToggle] = useState(false);
@@ -45,7 +46,7 @@ function Navbar() {
 							</li>
 						</ul>
 						<button onClick={() => setToggle(!toggle)} className="nav-btn">
-							<img src={menuIcon} alt="menu-icon" className="nav-burger-icon" />
+							<HamburgerIcon />
 						</button>
 					</div>
 				</article>
