@@ -1,9 +1,10 @@
 import { React, useState } from "react";
-import logo from "../assets/logo.png";
-import menuIcon from "../assets/menu.png";
+// import logo from "../assets/logo.png";
+import Logo from "../components/Logo";
 import { Link } from "react-scroll";
 import { animateScroll as scroll } from "react-scroll";
 import HamburgerIcon from "../components/HamburgerIcon";
+import ThemeBtn from "../components/ThemeBtn";
 
 function Navbar() {
 	const [toggle, setToggle] = useState(false);
@@ -12,7 +13,7 @@ function Navbar() {
 			<nav>
 				<article className="nav-container">
 					<div onClick={() => scroll.scrollToTop()}>
-						<img src={logo} alt="logo" className="logo" />
+						<Logo />
 					</div>
 					<div>
 						<ul className="links-container">
@@ -44,6 +45,7 @@ function Navbar() {
 								</Link>
 								<div className="nav-link-underline"></div>
 							</li>
+							<ThemeBtn />
 						</ul>
 						<button onClick={() => setToggle(!toggle)} className="nav-btn">
 							<HamburgerIcon />
@@ -74,6 +76,7 @@ function Navbar() {
 								Contact
 							</Link>
 						</li>
+						<ThemeBtn />
 					</ul>
 				</div>
 			)}
