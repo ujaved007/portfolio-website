@@ -14,6 +14,7 @@
 	--color-accent: #fdb24c;
 	--background-color: white;
 	--drop-shadow: drop-shadow(0 0 16px rgba(12, 115, 240, 0.16));
+	--footer-color: #0c73f0;
 }
 
 .theme-dark {
@@ -22,6 +23,7 @@
 	--color-accent: #fdb24c;
 	--background-color: #1a1a1a;
 	--drop-shadow: drop-shadow(0 0 20px rgba(253, 178, 76, 0.16));
+	--footer-color: #fdb24c;
 }
 
 html,
@@ -135,7 +137,7 @@ nav {
 	justify-content: space-between;
 	align-items: center;
 }
-.svg-logo {
+.logo {
 	width: 120px;
 }
 .logo-parent svg {
@@ -315,7 +317,8 @@ a {
 .input-field {
 	width: 30rem;
 	border-width: 0 0 2px 0;
-	border-bottom-color: var(--blue);
+	border-bottom-color: var(--color-primary);
+	background-color: var(--background-color);
 	padding: 10px 0 10px 0;
 }
 textarea {
@@ -324,7 +327,7 @@ textarea {
 }
 /*FOOTER*/
 .footer {
-	background-color: var(--blue);
+	background-color: var(--footer-color);
 	height: 60px;
 	width: 100%;
 }
