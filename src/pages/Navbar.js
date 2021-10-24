@@ -5,9 +5,38 @@ import { Link } from "react-scroll";
 import { animateScroll as scroll } from "react-scroll";
 import HamburgerIcon from "../components/HamburgerIcon";
 import ThemeBtn from "../components/ThemeBtn";
+import { motion, AnimatePresence } from "framer-motion";
+import useAnimVisible from "../utils/useAnimVisible";
 
 function Navbar() {
 	const [toggle, setToggle] = useState(false);
+	const variants = {
+		visible: {
+			y: 0,
+			opacity: 1,
+			transition: {
+				duration: 1,
+				staggerChildren: 0.1,
+			},
+		},
+		hidden: {
+			y: -200,
+			opacity: 0,
+		},
+	};
+	const childVariants = {
+		visible: {
+			x: 0,
+			opacity: 1,
+			transition: {
+				duration: 1,
+			},
+		},
+		hidden: {
+			x: -200,
+			opacity: 0,
+		},
+	};
 	return (
 		<>
 			<nav>
@@ -53,33 +82,53 @@ function Navbar() {
 					</div>
 				</article>
 			</nav>
-			{toggle && (
-				<div className="links-container-mob">
-					<ul className="nav-links-mob">
-						<li>
-							<Link to="about" spy={true} smooth={true} className="nav-links">
-								About
-							</Link>
-						</li>
-						<li>
-							<Link
-								to="projects"
-								spy={true}
-								smooth={true}
-								className="nav-links"
-							>
-								Projects
-							</Link>
-						</li>
-						<li>
-							<Link to="contact" spy={true} smooth={true} className="nav-links">
-								Contact
-							</Link>
-						</li>
-						<ThemeBtn />
-					</ul>
-				</div>
-			)}
+			<AnimatePresence>
+				{toggle && (
+					<motion.div
+						className="links-container-mob"
+						animate="visible"
+						initial="hidden"
+						variants={variants}
+						exit={{
+							y: -1000,
+							transition: {
+								duration: 1,
+							},
+						}}
+					>
+						<ul className="nav-links-mob">
+							<motion.li variants={childVariants}>
+								<Link to="about" spy={true} smooth={true} className="nav-links">
+									About
+								</Link>
+							</motion.li>
+							<motion.li variants={childVariants}>
+								<Link
+									to="projects"
+									spy={true}
+									smooth={true}
+									className="nav-links"
+								>
+									Projects
+								</Link>
+							</motion.li>
+							<motion.li variants={childVariants}>
+								<Link
+									to="contact"
+									spy={true}
+									smooth={true}
+									className="nav-links"
+								>
+									Contact
+								</Link>
+							</motion.li>
+							<motion.div variants={childVariants}>
+								<ThemeBtn />
+							</motion.div>
+						</ul>
+					</motion.div>
+				)}
+			</AnimatePresence>
 		</>
 	);
 }

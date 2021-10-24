@@ -188,6 +188,7 @@ nav {
 	align-items: flex-end;
 	position: fixed;
 	background-color: var(--background-color);
+	box-shadow: 0 5px 16px rgb(12 115 240 / 0.16);
 	width: 100vw;
 	z-index: 3;
 	overflow: hidden;
