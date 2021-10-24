@@ -38,6 +38,7 @@ body {
 main {
 	margin: 0 auto;
 	max-width: 90vw;
+	overflow: hidden;
 }
 
 .container {

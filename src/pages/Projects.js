@@ -9,6 +9,14 @@ function Projects() {
 	const controls = useAnimation();
 	const [ref, inView] = useInView();
 
+	const variants = {
+		hidden: {
+			opacity: 0,
+		},
+		visible: {
+			opacity: 1,
+		},
+	};
 	const leftSlide = {
 		hidden: {
 			opacity: 0,
@@ -49,14 +57,17 @@ function Projects() {
 		<section className="container" id="projects">
 			<Title title="Projects" />
 			<article className="justify-center">
-				<div className="grid-2-col">
+				<motion.div
+					className="grid-2-col"
+					ref={ref}
+					animate={controls}
+					variants={variants}
+				>
 					{projectsData.map((project, i) => {
 						return (
 							<motion.div
 								key={project.key}
 								className="card-parent"
-								ref={ref}
-								animate={controls}
 								variants={i % 2 == 0 ? leftSlide : rightSlide}
 							>
 								<Card
@@ -70,7 +81,7 @@ function Projects() {
 							</motion.div>
 						);
 					})}
-				</div>
+				</motion.div>
 			</article>
 		</section>
 	);
