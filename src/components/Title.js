@@ -1,11 +1,9 @@
-import { React, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { React } from "react";
+import { motion } from "framer-motion";
+import useAnimVisible from "../utils/useAnimVisible";
 
 function Title(props) {
-	const controls = useAnimation();
-	const [ref, inView] = useInView();
-
+	const [ref, controls] = useAnimVisible();
 	const variants = {
 		hidden: {
 			opacity: 0,
@@ -36,15 +34,6 @@ function Title(props) {
 			},
 		},
 	};
-
-	useEffect(() => {
-		if (inView) {
-			controls.start("visible");
-		}
-		if (!inView) {
-			controls.start("hidden");
-		}
-	}, [controls, inView]);
 
 	return (
 		<article className="justify-center">

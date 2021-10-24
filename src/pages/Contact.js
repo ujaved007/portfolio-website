@@ -1,19 +1,11 @@
-import { React, useEffect } from "react";
+import { React } from "react";
 import Title from "../components/Title";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import useAnimVisible from "../utils/useAnimVisible";
 
 function Contact() {
-	const controls = useAnimation();
-	const [ref, inView] = useInView();
-	useEffect(() => {
-		if (inView) {
-			controls.start("visible");
-		}
-		if (!inView) {
-			controls.start("hidden");
-		}
-	}, [controls, inView]);
+	const [ref, controls] = useAnimVisible();
+
 	const variants = {
 		hidden: {
 			opacity: 0,
@@ -32,7 +24,7 @@ function Contact() {
 		visible: {
 			scaleX: 1,
 			transition: {
-				duration: 1,
+				duration: 0.7,
 			},
 		},
 	};

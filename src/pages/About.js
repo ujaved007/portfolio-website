@@ -1,21 +1,12 @@
 import { React, useEffect } from "react";
 import Title from "../components/Title";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 import { variants, childVariants } from "../utils/AnimVariants";
 import MainBtn from "../components/MainBtn";
+import useAnimVisible from "../utils/useAnimVisible";
 
 function About() {
-	const controls = useAnimation();
-	const [ref, inView] = useInView();
-	useEffect(() => {
-		if (inView) {
-			controls.start("visible");
-		}
-		if (!inView) {
-			controls.start("hidden");
-		}
-	}, [controls, inView]);
+	const [ref, controls] = useAnimVisible();
 
 	return (
 		<div className="container" id="about">

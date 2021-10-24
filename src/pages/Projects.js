@@ -1,14 +1,11 @@
-import { React, useEffect } from "react";
+import { React } from "react";
 import projectsData from "./projectsData";
 import Title from "../components/Title";
 import Card from "../components/Card";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import useAnimVisible from "../utils/useAnimVisible";
 
 function Projects() {
-	const controls = useAnimation();
-	const [ref, inView] = useInView();
-
 	const variants = {
 		hidden: {
 			opacity: 0,
@@ -44,14 +41,7 @@ function Projects() {
 		},
 	};
 
-	useEffect(() => {
-		if (inView) {
-			controls.start("visible");
-		}
-		if (!inView) {
-			controls.start("hidden");
-		}
-	}, [controls, inView]);
+	const [ref, controls] = useAnimVisible();
 
 	return (
 		<section className="container" id="projects">
