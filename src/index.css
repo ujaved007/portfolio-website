@@ -79,6 +79,7 @@ label {
 .hero {
 	font-size: 1.5rem;
 	color: var(--color-secondary);
+	line-height: 2rem;
 	margin-bottom: 3rem;
 }
 .btn-main {
@@ -90,6 +91,7 @@ label {
 	border-width: 3px;
 	text-align: center;
 	padding: 10px 20px 10px 20px;
+	border-radius: 30px;
 }
 .btn-main:hover {
 	color: var(--background-color);
@@ -288,6 +290,7 @@ header {
 	text-align: center;
 	padding: 5px 10px 5px 10px;
 	margin-right: 20px;
+	border-radius: 20px;
 }
 .card-btn:hover {
 	color: var(--background-color);
@@ -302,6 +305,7 @@ header {
 	margin: 20px 10px 20px 0;
 	padding: 3px 7px 3px 7px;
 	color: var(--background-color);
+	border-radius: 15px;
 }
 a {
 	color: inherit;
