@@ -5,7 +5,7 @@ import { useAnimation } from "framer-motion";
 const useAnimVisible = () => {
 	const controls = useAnimation();
 	const [ref, inView] = useInView({
-		threshold: 0.7,
+		threshold: 0.3,
 	});
 	useEffect(() => {
 		if (inView) {
