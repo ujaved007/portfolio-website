@@ -49,7 +49,7 @@ function Card(props) {
 					<p>{props.description}</p>
 				</motion.div>
 				<motion.div className="card-links" variants={childVariants}>
-					<CardBtn link={props.liveLink} text="Live Link" />
+					{props.liveLink ? <CardBtn link={props.liveLink} text="Live Link" /> : <div></div>}
 					<CardBtn link={props.githubLink} text="Github Link" />
 				</motion.div>
 				<motion.div className="card-tags" variants={childVariants}>
