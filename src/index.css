@@ -14,6 +14,8 @@
 	--color-accent: #fdb24c;
 	--background-color: white;
 	--drop-shadow: drop-shadow(0 0 16px rgba(12, 115, 240, 0.16));
+	/*box shadow is for safari as dropshadow is not working on it*/
+	--box-shadow: 0 0 16px rgba(12, 115, 240, 0.16);
 	--footer-color: #0c73f0;
 }
 
@@ -23,6 +25,8 @@
 	--color-accent: #fdb24c;
 	--background-color: #1a1a1a;
 	--drop-shadow: drop-shadow(0 0 20px rgba(253, 178, 76, 0.16));
+	/*box shadow is for safari as dropshadow is not working on it*/
+	--box-shadow: 0 0 16px rgba(253, 178, 76, 0.16);
 	--footer-color: #fdb24c;
 }
 
@@ -269,7 +273,9 @@ header {
 	overflow: hidden;
 	background-color: var(--background-color);
 	filter: var(--drop-shadow);
+	-webkit-box-shadow: var(--box-shadow);
 	padding: 20px 20px 20px 20px;
+	border-radius: 20px;
 }
 .card-img-container {
 	height: 280px;

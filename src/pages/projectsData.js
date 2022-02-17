@@ -1,6 +1,8 @@
 import githubSearch from "../assets/githubSearch.jpg";
 import calculator from "../assets/calculator.png";
 import tamcextension from "../assets/tamcextension.jpg";
+import dictionary from "../assets/dictionary.webp";
+
 export default [
 	{
 		key: 0,
@@ -13,6 +15,16 @@ export default [
 	},
 	{
 		key: 1,
+		image: dictionary,
+		title: "Dictionary with Authentication",
+		description:
+			"Search the definitions of words. Features inlcude authentication, pronunciation, synonyms, antonyms and origins",
+		liveLink: "https://dictionaryx.netlify.app/",
+		githubLink: "https://github.com/ujaved007/dictionary",
+		tags: ["REACT", "REDUX", "JS", "HTML", "SCSS"],
+	},
+	{
+		key: 2,
 		image: githubSearch,
 		title: "Github user Search",
 		description: "Searches GitHub users and displays the stats in eye-catching charts.",
@@ -21,7 +33,7 @@ export default [
 		tags: ["REACT", "JS", "HTML", "CSS"],
 	},
 	{
-		key: 2,
+		key: 3,
 		image: calculator,
 		title: "Pet Age Calculator",
 		description: "Calculator to find out cat or dog age in human years.",
