@@ -10,7 +10,7 @@ export default [
 		title: "Chrome Extension for Telstra",
 		description:
 			"Full-stack Chrome extension created for Telstra Alarm monitoring center. Automates filling out of forms.",
-		githubLink: "https://github.com/ujaved007/github-users-search",
+		githubLink: "https://github.com/ujaved007/tamc-extension",
 		tags: ["MongoDB", "Express", "REACT", "NODE"],
 	},
 	{
