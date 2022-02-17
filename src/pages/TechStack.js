@@ -1,4 +1,4 @@
-import { React, useEffect } from "react";
+import { React } from "react";
 import stacks from "./stacksData";
 import Title from "../components/Title";
 import { motion } from "framer-motion";
@@ -10,24 +10,14 @@ function TechStack() {
 
 	return (
 		<section className="container">
-			<motion.div
-				ref={ref}
-				animate={controls}
-				initial="hidden"
-				variants={variants}
-			>
+			<motion.div ref={ref} animate={controls} initial="hidden" variants={variants}>
 				<Title title="Tech Stack" />
 				<article className="justify-center">
 					<div className="stack-container">
-						{stacks.map((stack) => {
+						{stacks.map((stack, index) => {
 							return (
-								<div>
-									<motion.img
-										className="stack-icon"
-										src={stack}
-										alt={`${stack}`}
-										variants={childVariants}
-									/>
+								<div key={index}>
+									<motion.img className="stack-icon" src={stack} alt={`${stack}`} variants={childVariants} />
 								</div>
 							);
 						})}

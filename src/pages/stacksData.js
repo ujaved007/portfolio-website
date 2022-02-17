@@ -7,4 +7,6 @@ import npm from "../assets/npm.png";
 import git from "../assets/git.png";
 import adobe from "../assets/adobe.png";
 
-export default [html, css, javascript, react, redux, npm, git, adobe];
+const images = [html, css, javascript, react, redux, npm, git, adobe];
+
+export default images;

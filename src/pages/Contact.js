@@ -2,32 +2,10 @@ import { React } from "react";
 import Title from "../components/Title";
 import { motion } from "framer-motion";
 import useAnimVisible from "../utils/useAnimVisible";
+import { scaleVariants, scaleChildVariants } from "../utils/AnimVariants";
 
 function Contact() {
 	const [ref, controls] = useAnimVisible();
-
-	const variants = {
-		hidden: {
-			opacity: 0,
-		},
-		visible: {
-			opacity: 1,
-			transition: {
-				staggerChildren: 0.1,
-			},
-		},
-	};
-	const childVariants = {
-		hidden: {
-			scaleX: 0,
-		},
-		visible: {
-			scaleX: 1,
-			transition: {
-				duration: 0.7,
-			},
-		},
-	};
 
 	return (
 		<section className="container" id="contact">
@@ -41,7 +19,8 @@ function Contact() {
 					onSubmit="submit"
 					ref={ref}
 					animate={controls}
-					variants={variants}
+					initial="hidden"
+					variants={scaleVariants}
 				>
 					<div className="form-style">
 						<label htmlFor="name">Name*</label>
@@ -52,7 +31,7 @@ function Contact() {
 							placeholder="Your Name.."
 							className="input-field"
 							required
-							variants={childVariants}
+							variants={scaleChildVariants}
 						/>
 					</div>
 					<div className="form-style">
@@ -64,7 +43,7 @@ function Contact() {
 							placeholder="Your Email.."
 							className="input-field"
 							required
-							variants={childVariants}
+							variants={scaleChildVariants}
 						/>
 					</div>
 					<div className="form-style">
@@ -75,7 +54,7 @@ function Contact() {
 							name="subject"
 							placeholder="What’s this about? (Optional)"
 							className="input-field"
-							variants={childVariants}
+							variants={scaleChildVariants}
 						/>
 					</div>
 					<div className="form-style">
@@ -88,7 +67,7 @@ function Contact() {
 							className="input-field"
 							placeholder="Your message..."
 							required
-							variants={childVariants}
+							variants={scaleChildVariants}
 						></motion.textarea>
 					</div>
 					<input type="hidden" name="form-name" value="contact" />

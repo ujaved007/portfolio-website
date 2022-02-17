@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 import * as animationData from "../assets/hero-anim.json";
-import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import MainBtn from "../components/MainBtn";
 
@@ -29,10 +28,7 @@ function Header() {
 						Hi, <br />
 						I'm Usama
 					</h1>
-					<p className="hero">
-						I’m a Front-end Web Developer with a knack for learning new
-						technologies.
-					</p>
+					<p className="hero">I’m a Front-end Web Developer with a knack for learning new technologies.</p>
 					<MainBtn link="contact" text="Get in Touch" />
 				</motion.div>
 				<motion.div

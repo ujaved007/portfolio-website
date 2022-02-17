@@ -1,4 +1,4 @@
-import { react, useEffect } from "react";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion";
 
@@ -11,9 +11,10 @@ const useAnimVisible = () => {
 		if (inView) {
 			controls.start("visible");
 		}
-		if (!inView) {
-			controls.start("hidden");
-		}
+		// !inView triggers animation each time component comes into view
+		// if (!inView) {
+		// 	controls.start("hidden");
+		// }
 	}, [controls, inView]);
 	return [ref, controls];
 };

@@ -1,12 +1,10 @@
 import { React, useState } from "react";
-// import logo from "../assets/logo.png";
 import Logo from "../components/Logo";
 import { Link } from "react-scroll";
 import { animateScroll as scroll } from "react-scroll";
 import HamburgerIcon from "../components/HamburgerIcon";
 import ThemeBtn from "../components/ThemeBtn";
 import { motion, AnimatePresence } from "framer-motion";
-import useAnimVisible from "../utils/useAnimVisible";
 
 function Navbar() {
 	const [toggle, setToggle] = useState(false);
@@ -21,19 +19,6 @@ function Navbar() {
 		},
 		hidden: {
 			y: -200,
-			opacity: 0,
-		},
-	};
-	const childVariants = {
-		visible: {
-			x: 0,
-			opacity: 1,
-			transition: {
-				duration: 1,
-			},
-		},
-		hidden: {
-			x: -200,
 			opacity: 0,
 		},
 	};
@@ -53,23 +38,13 @@ function Navbar() {
 								<div className="nav-link-underline"></div>
 							</li>
 							<li className="nav-link-container">
-								<Link
-									to="projects"
-									spy={true}
-									smooth={true}
-									className="nav-links"
-								>
+								<Link to="projects" spy={true} smooth={true} className="nav-links">
 									Projects
 								</Link>
 								<div className="nav-link-underline"></div>
 							</li>
 							<li className="nav-link-container">
-								<Link
-									to="contact"
-									spy={true}
-									smooth={true}
-									className="nav-links"
-								>
+								<Link to="contact" spy={true} smooth={true} className="nav-links">
 									Contact
 								</Link>
 								<div className="nav-link-underline"></div>
@@ -97,34 +72,24 @@ function Navbar() {
 						}}
 					>
 						<ul className="nav-links-mob">
-							<motion.li variants={childVariants}>
+							<li>
 								<Link to="about" spy={true} smooth={true} className="nav-links">
 									About
 								</Link>
-							</motion.li>
-							<motion.li variants={childVariants}>
-								<Link
-									to="projects"
-									spy={true}
-									smooth={true}
-									className="nav-links"
-								>
+							</li>
+							<li>
+								<Link to="projects" spy={true} smooth={true} className="nav-links">
 									Projects
 								</Link>
-							</motion.li>
-							<motion.li variants={childVariants}>
-								<Link
-									to="contact"
-									spy={true}
-									smooth={true}
-									className="nav-links"
-								>
+							</li>
+							<li>
+								<Link to="contact" spy={true} smooth={true} className="nav-links">
 									Contact
 								</Link>
-							</motion.li>
-							<motion.div variants={childVariants}>
+							</li>
+							<div>
 								<ThemeBtn />
-							</motion.div>
+							</div>
 						</ul>
 					</motion.div>
 				)}

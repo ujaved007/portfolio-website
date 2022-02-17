@@ -6,9 +6,8 @@ import TechStack from "./pages/TechStack";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
-import Error from "./pages/Error";
 import { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { applyTheme } from "./utils/themes";
 
 function App() {

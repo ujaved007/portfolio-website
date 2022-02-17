@@ -1,58 +1,27 @@
-import { React, useEffect } from "react";
+import { React } from "react";
 import CardBtn from "./CardBtn";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { scaleVariants, scaleChildVariants } from "../utils/AnimVariants";
+import useAnimVisible from "../utils/useAnimVisible";
 
 function Card(props) {
-	const controls = useAnimation();
-	const [ref, inView] = useInView();
-
-	const variants = {
-		hidden: {
-			opacity: 0,
-		},
-		visible: {
-			opacity: 1,
-			transition: {
-				staggerChildren: 0.1,
-			},
-		},
-	};
-	const childVariants = {
-		hidden: {
-			scale: 0,
-		},
-		visible: {
-			scale: 1,
-			transition: {
-				duration: 1,
-			},
-		},
-	};
-	useEffect(() => {
-		if (inView) {
-			controls.start("visible");
-		}
-		if (!inView) {
-			controls.start("hidden");
-		}
-	}, [controls, inView]);
+	const [ref, controls] = useAnimVisible();
 
 	return (
 		<div className="card">
-			<motion.div ref={ref} animate={controls} variants={variants}>
-				<motion.div className="card-img-container" variants={childVariants}>
+			<motion.div ref={ref} initial="hidden" animate={controls} variants={scaleVariants}>
+				<motion.div className="card-img-container" variants={scaleChildVariants}>
 					<img src={props.image} alt={`${props.title}`} className="card-img" />
 				</motion.div>
-				<motion.div className="card-desc" variants={childVariants}>
+				<motion.div className="card-desc" variants={scaleChildVariants}>
 					<h3>{props.title}</h3>
 					<p>{props.description}</p>
 				</motion.div>
-				<motion.div className="card-links" variants={childVariants}>
+				<motion.div className="card-links" variants={scaleChildVariants}>
 					{props.liveLink ? <CardBtn link={props.liveLink} text="Live Link" /> : <div></div>}
 					<CardBtn link={props.githubLink} text="Github Link" />
 				</motion.div>
-				<motion.div className="card-tags" variants={childVariants}>
+				<motion.div className="card-tags" variants={scaleChildVariants}>
 					{props.tags.map((prop) => {
 						return <div className="tag">{prop}</div>;
 					})}

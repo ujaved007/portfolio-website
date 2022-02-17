@@ -3,7 +3,7 @@ import calculator from "../assets/calculator.png";
 import tamcextension from "../assets/tamcextension.jpg";
 import dictionary from "../assets/dictionary.webp";
 
-export default [
+const data = [
 	{
 		key: 0,
 		image: tamcextension,
@@ -42,3 +42,5 @@ export default [
 		tags: ["JS", "HTML", "CSS"],
 	},
 ];
+
+export default data;

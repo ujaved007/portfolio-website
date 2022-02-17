@@ -4,6 +4,7 @@ import Title from "../components/Title";
 import Card from "../components/Card";
 import { motion } from "framer-motion";
 import useAnimVisible from "../utils/useAnimVisible";
+import { leftSlide, rightSlide } from "../utils/AnimVariants";
 
 function Projects() {
 	const variants = {
@@ -14,32 +15,6 @@ function Projects() {
 			opacity: 1,
 		},
 	};
-	const leftSlide = {
-		hidden: {
-			opacity: 0,
-			x: -500,
-		},
-		visible: {
-			opacity: 1,
-			x: 0,
-			transition: {
-				duration: 0.5,
-			},
-		},
-	};
-	const rightSlide = {
-		hidden: {
-			opacity: 0,
-			x: 500,
-		},
-		visible: {
-			opacity: 1,
-			x: 0,
-			transition: {
-				duration: 0.5,
-			},
-		},
-	};
 
 	const [ref, controls] = useAnimVisible();
 
@@ -47,19 +22,10 @@ function Projects() {
 		<section className="container" id="projects">
 			<Title title="Projects" />
 			<article className="justify-center">
-				<motion.div
-					className="grid-2-col"
-					ref={ref}
-					animate={controls}
-					variants={variants}
-				>
+				<motion.div className="grid-2-col" ref={ref} initial="hidden" animate={controls} variants={variants}>
 					{projectsData.map((project, i) => {
 						return (
-							<motion.div
-								key={project.key}
-								className="card-parent"
-								variants={i % 2 == 0 ? leftSlide : rightSlide}
-							>
+							<motion.div key={project.key} className="card-parent" variants={i % 2 === 0 ? leftSlide : rightSlide}>
 								<Card
 									image={project.image}
 									title={project.title}
